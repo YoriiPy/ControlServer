@@ -11,7 +11,7 @@ async def main():
     bot = Bot(token=Token)
     dispatcher = Dispatcher()
     await dispatcher.start_polling(bot)
-    await dispatcher.include_router(router)
+    dispatcher.include_router(router)
 
 if __name__ == "__main__":
     print("Start Bot")
