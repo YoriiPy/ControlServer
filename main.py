@@ -9,9 +9,12 @@ async def main():
     Token = os.getenv("BOT_TOKEN")
 
     bot = Bot(token=Token)
+
     dispatcher = Dispatcher()
-    await dispatcher.start_polling(bot)
     dispatcher.include_router(router)
+
+    await dispatcher.start_polling(bot)
+
 
 if __name__ == "__main__":
     print("Start Bot")
