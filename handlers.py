@@ -31,7 +31,7 @@ async def restart_server_handler(callback: CallbackQuery):
     result = await func.restart_server()
 
     if result["returncode"] == 0:
-        await callback.message.edit_text("🚀🤖 Успешная перезагрузка", reply_markup=)
+        await callback.message.edit_text("🚀🤖 Успешная перезагрузка", reply_markup=kb.return_start_keyboard())
     else:
         await callback.message.edit_text(f"❌ Ошибка: {result['stderr']}")
 
